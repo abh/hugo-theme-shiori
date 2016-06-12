@@ -1,12 +1,12 @@
 <div class="post-header-home">
   <h1 class="post-title-home">
-    <a href="{{ .Site.BaseURL }}{{ .RelPermalink }}">{{ .Title }}</a>
+    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
   </h1>
   {{ partial "post-header-home.html" . }}
 </div>
 <div class="post-excerpt-home">
   {{ .Summary }}
   {{ if .Truncated }}
-  <p class="text-right"><a href="{{ .Site.BaseURL }}{{ .RelPermalink }}">Continue Reading &rarr;</a></p>
+  <p class="text-right"><a href="{{ .RelPermalink }}">Continue Reading &rarr;</a></p>
   {{ end }}
 </div>

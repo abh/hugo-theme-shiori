@@ -18,8 +18,11 @@
             </h3>
           {{ end }}
           <p>
-            <a href="{{ .Site.BaseURL }}{{ .RelPermalink }}" class="post-title-archive">{{ .Title }}</a>
-            <small class="text-muted">{{ .Date.Format "Jan 2, 2006" }}</small>
+            <a href="{{ .Site.BaseURL }}{{ .RelPermalink }}" class="post-title-archive">
+              {{ if .Title }}{{ .Title }}
+              {{ else }}{{ .Date.Format "Jan 2, 2006" }}
+              {{ end }}</a>
+            {{ if .Title }}<small class="text-muted">{{ .Date.Format "Jan 2, 2006" }}</small>{{ end }}
           </p>
         {{ end }}
       {{ end }}

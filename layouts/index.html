@@ -1,7 +1,7 @@
 {{ partial "layout_begin.html" . }}
 <div class="row">
   <div class="col-sm-8">
-    {{ range first 10 .Site.Pages.ByDate.Reverse }}
+    {{ range last 10 (first 11 (where .Site.Pages.ByDate.Reverse "Type" "post")) }}
       {{ if eq .Type "post" }}
         {{ .Render "summary"}}
       {{ end }}
